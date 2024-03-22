@@ -12,6 +12,7 @@ public class FirstEnigme : MonoBehaviour
     private static int _nbSucces;
     private List<GameObject> allItems;
     private bool startedCoroutine;
+    private (GameObject, bool) inPlace = (null, false);
     private Coroutine coroutine;
     private void Start()
     {
@@ -41,7 +42,7 @@ public class FirstEnigme : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (allItems.Contains(other.gameObject))
+        if (allItems.Contains(other.gameObject) && !inPlace.Item2)
         {
             coroutine = StartCoroutine(WaitForObjectRelease(other.gameObject));
         }
@@ -60,12 +61,25 @@ public class FirstEnigme : MonoBehaviour
         obj.transform.rotation = Quaternion.identity;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        inPlace = (obj, true);
         if (obj == item.gameObject) _nbSucces++;
         
         startedCoroutine = false;
         yield return null;
     }
-     
+
+    private void OnTriggerStay(Collider other)
+    {
+        var obj = other.gameObject; 
+        if (inPlace != (obj, true) || transform.position == obj.transform.position) return;
+        var grab = obj.GetComponent<XRGrabInteractable>();
+        if (grab.isSelected) return;
+        var rb = obj.GetComponent<Rigidbody>();
+        obj.transform.position = transform.position;
+        obj.transform.rotation = Quaternion.identity;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -74,6 +88,8 @@ public class FirstEnigme : MonoBehaviour
             StopCoroutine(coroutine);
             startedCoroutine = false;
         }
+
+        if (other.gameObject == inPlace.Item1) inPlace = (null, false);
         if (other != item) return;
         _nbSucces--;
     }
