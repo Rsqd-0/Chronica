@@ -12,11 +12,11 @@ public class EnigmeManager : MonoBehaviour
     
         public static int EnigmeNum = 0;
         
-        private int lastEnigme = 0;
+        private int lastEnigme;
         
         private void Awake()
         {
-            var firstTest = new List<GameObject>
+            var firstEnigme = new List<GameObject>
             {
                 GameObject.Find("Queteur"),
                 GameObject.Find("Edile"),
@@ -26,7 +26,7 @@ public class EnigmeManager : MonoBehaviour
             {
                 GameObject.Find("CeaserBust")
             };
-            DictEnigme.Add(0, firstTest);
+            DictEnigme.Add(0, firstEnigme);
             DictEnigme.Add(1, secondTest);
             foreach (var item in DictEnigme[0])
             {
@@ -42,16 +42,17 @@ public class EnigmeManager : MonoBehaviour
         // Update is called once per frame
         private void Update()
         {
-            if (EnigmeNum > 1) Application.Quit();
             if (EnigmeNum == lastEnigme) return;
             foreach (var lastObject in DictEnigme[lastEnigme])
             {
                 lastObject.GetComponent<XRGrabInteractable>().enabled = false;
             }
+            lastEnigme++;
+            if (!DictEnigme.Keys.Contains(EnigmeNum)) return;
             foreach (var nextObject in DictEnigme[EnigmeNum])
             {
                 nextObject.GetComponent<XRGrabInteractable>().enabled = true;
             }
-            lastEnigme++;
+            
         }
 }
