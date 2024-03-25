@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class EnigmeManager : MonoBehaviour
+namespace Enigmes
 {
+    public class EnigmeManager : MonoBehaviour
+    {
         public static readonly Dictionary<int, List<GameObject>> DictEnigme = new();
     
         public static int EnigmeNum = 0;
@@ -55,4 +54,5 @@ public class EnigmeManager : MonoBehaviour
             }
             
         }
+    }
 }
