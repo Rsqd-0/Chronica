@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -7,6 +8,8 @@ namespace Enigmes
 {
     public class EnigmeManager : MonoBehaviour
     {
+        [SerializeField] private AudioSource source;
+        
         public static readonly Dictionary<int, List<GameObject>> DictEnigme = new();
     
         public static int EnigmeNum = 0;
@@ -25,8 +28,17 @@ namespace Enigmes
             {
                 GameObject.Find("CeaserBust")
             };
+            var lastEnigmeList = new List<GameObject>
+            {
+                GameObject.Find("Poinçon"),
+                GameObject.Find("Halberd"),
+                GameObject.Find("2HandSword"),
+                GameObject.Find("Mace"),
+                GameObject.Find("Bow"),
+            };
             DictEnigme.Add(0, firstEnigme);
             DictEnigme.Add(1, secondTest);
+            DictEnigme.Add(3,lastEnigmeList);
             foreach (var item in DictEnigme[0])
             {
                 item.GetComponent<XRGrabInteractable>().enabled = true;
@@ -53,6 +65,12 @@ namespace Enigmes
                 nextObject.GetComponent<XRGrabInteractable>().enabled = true;
             }
             
+        }
+
+        public void Success()
+        {
+            EnigmeNum++;
+            source.Play();
         }
     }
 }

@@ -39,10 +39,13 @@ public class GameMenuManager : MonoBehaviour
         }
         
         var position = head.position;
+        var forward1 = head.forward;
         menu.transform.LookAt(new Vector3(position.x,menu.transform.position.y,position.z));
         menu.transform.forward *= -1;
         rulesMenu.transform.LookAt(new Vector3(position.x,rulesMenu.transform.position.y,position.z));
         rulesMenu.transform.forward *= -1;
+        menu.transform.position = position + 2 * forward1;
+        rulesMenu.transform.position = position + 2 * forward1;
     }
 
     public void RulesButton()
