@@ -798,7 +798,8 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
                 // Send text entered event and close the keyboard
                 OnTextSubmitted?.Invoke(this, EventArgs.Empty);
 
-                if (NonNativeKeyboard.Instance.InputField.text == "veni, vidi, vici")
+                if (NonNativeKeyboard.Instance.InputField.text.ToLower() == "veni, vidi, vici" ||
+                    NonNativeKeyboard.Instance.InputField.text.ToLower() == "veni,vidi,vici")
                 {
                     Debug.Log("Enigme 2 OK");
                 }
