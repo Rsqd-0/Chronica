@@ -47,11 +47,6 @@ public class TriggerAssets : MonoBehaviour
 
     private IEnumerator Wait(Book book)
     {
-        /*while (book.GetIsRotating())
-        {
-            yield return null;
-        }*/
-        
         uiButtonScript.window.SetActive(false);
         uiButtonScript.ui.SetActive(true);
         canvas.SetActive(false);
