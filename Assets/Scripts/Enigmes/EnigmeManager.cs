@@ -26,7 +26,7 @@ namespace Enigmes
             };
             var secondTest = new List<GameObject>
             {
-                GameObject.Find("CeaserBust")
+                GameObject.Find("Enigme2") // TODO : Set Active
             };
             var lastEnigmeList = new List<GameObject>
             {
