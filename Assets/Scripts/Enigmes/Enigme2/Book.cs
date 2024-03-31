@@ -1,48 +1,50 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Book : MonoBehaviour
 {
-    [SerializeField] private float pageSpeed = 0.1f;
-    [SerializeField] private List<Transform> pages;
-    private int _index = -1;
-    private bool _isRotating = false;
+    [SerializeField] float pageSpeed = 0.5f;
+    [SerializeField] List<Transform> pages;
+    int index = -1;
+    bool rotate = false;
+    [SerializeField] GameObject backButton;
+    [SerializeField] GameObject forwardButton;
 
-    [SerializeField] private GameObject backButton;
-    [SerializeField] private GameObject forwardButton;
-
-
-    public bool GetIsRotating()
-    {
-        return _isRotating;
-    }
-    
-    
     private void Start()
     {
+        InitialState();
+    }
+
+    public void InitialState()
+    {
+        for (int i=0; i<pages.Count; i++)
+        {
+            //pages[i].transform.rotation=Quaternion.identity;
+        }
+        //pages[0].SetAsLastSibling();
         backButton.SetActive(false);
+
     }
 
     public void RotateForward()
     {
-        if (_index >= pages.Count || _isRotating) return;
-        _index++;
-        float angle = 180; // rotation of the page
-        ForwardButtonAction();
-        pages[_index].SetAsLastSibling();
+        if (rotate == true) { return; }
+        index++;
+        float angle = 0; //in order to rotate the page forward, you need to set the rotation by 180 degrees around the y axis
+        ForwardButtonActions();
+        pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
+
     }
 
-    private void ForwardButtonAction()
+    public void ForwardButtonActions()
     {
         if (backButton.activeInHierarchy == false)
         {
             backButton.SetActive(true); //every time we turn the page forward, the back button should be activated
         }
-        if (_index == pages.Count - 1)
+        if (index == pages.Count - 1)
         {
             forwardButton.SetActive(false); //if the page is last then we turn off the forward button
         }
@@ -50,47 +52,50 @@ public class Book : MonoBehaviour
 
     public void RotateBack()
     {
-        if (_index <= -1 || _isRotating) return;
-        float angle = 0;
-        pages[_index].SetAsLastSibling();
+        if (rotate == true) { return; }
+        float angle = 180; //in order to rotate the page back, you need to set the rotation to 0 degrees around the y axis
+        pages[index].SetAsLastSibling();
         BackButtonActions();
         StartCoroutine(Rotate(angle, false));
     }
 
-    private void BackButtonActions()
+    public void BackButtonActions()
     {
         if (forwardButton.activeInHierarchy == false)
         {
             forwardButton.SetActive(true); //every time we turn the page back, the forward button should be activated
         }
-        if (_index - 1 == -1)
+        if (index - 1 == -1)
         {
             backButton.SetActive(false); //if the page is first then we turn off the back button
         }
     }
 
-    private IEnumerator Rotate(float angle, bool forward)
+    IEnumerator Rotate(float angle, bool forward)
     {
         float value = 0f;
         while (true)
         {
-            _isRotating = true;
-            Quaternion targetRotation = Quaternion.Euler(0, angle, 0);
-            value += Time.deltaTime * pageSpeed;
-            pages[_index].rotation = Quaternion.Slerp(pages[_index].rotation, targetRotation, value);
-
-            // angle between the given one and the current one
-            float angle1 = Quaternion.Angle(targetRotation, pages[_index].rotation);
+            rotate = true;
+            pages[index].rotation = Quaternion.Euler(0, angle, 0);
+            //value += Time.deltaTime * pageSpeed;
+            //pages[index].rotation = Quaternion.Slerp(pages[index].rotation, targetRotation, 1- value); //smoothly turn the page
+            float angle1 = Quaternion.Angle(pages[index].rotation, Quaternion.Euler(0, angle, 0)); //calculate the angle between the given angle of rotation and the current angle of rotation
             if (angle1 < 0.1f)
             {
                 if (forward == false)
                 {
-                    _index--;
+                    index--;
                 }
-                _isRotating = false;
+                rotate = false;
                 break;
+
             }
             yield return null;
+
         }
     }
+
+
+
 }

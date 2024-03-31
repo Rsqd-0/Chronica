@@ -11,7 +11,7 @@ public class PageTurn : MonoBehaviour
 
     public void Update()
     {
-        if (transform.rotation.y < - 0.5f)
+        if (transform.rotation.y < 0.1f)
         {
             pageContentFront.SetActive(false);
             pageContentBack.SetActive(true);
