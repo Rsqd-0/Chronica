@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Quaternion = System.Numerics.Quaternion;
 
 namespace Enigmes.Enigme3
 {
@@ -8,7 +10,12 @@ namespace Enigmes.Enigme3
         [SerializeField] private Collider item;
 
         private bool isPutOn;
-    
+        private UnityEngine.Quaternion itemRotation;
+        private void Start()
+        {
+            itemRotation = item.gameObject.transform.rotation;
+        }
+
         // Update is called once per frame
         private void Update()
         {
@@ -25,7 +32,7 @@ namespace Enigmes.Enigme3
             if (grab.isSelected) return;
             var rb = obj.GetComponent<Rigidbody>();
             obj.transform.position = transform.position;
-            obj.transform.rotation = Quaternion.identity;
+            obj.transform.rotation = itemRotation;
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             isPutOn = true;
