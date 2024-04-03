@@ -10,25 +10,34 @@ namespace Enigmes
     {
         [SerializeField] private AudioSource source;
         
-        public static readonly Dictionary<int, List<GameObject>> DictEnigme = new();
+        public static readonly Dictionary<int, GameObject[]> DictEnigme = new();
     
-        public static int EnigmeNum = 0;
+        public static int EnigmeNum;
         
         private int lastEnigme;
         
         private void Awake()
         {
-            var firstEnigme = new List<GameObject>
+            var firstEnigme = new[]
             {
                 GameObject.Find("Queteur"),
                 GameObject.Find("Edile"),
                 GameObject.Find("Preteur")
             };
-            var secondTest = new List<GameObject>
+            
+             var secondTest = new[]
+            
             {
                 GameObject.Find("Enigme2") // TODO : Set Active
             };
-            var lastEnigmeList = new List<GameObject>
+            
+            var enigmeCouronne = new[]
+            {
+                GameObject.Find("Couronne"),
+                GameObject.Find("CeaserBust")
+            };
+            
+            var lastEnigmeList = new[]
             {
                 GameObject.Find("Poinçon"),
                 GameObject.Find("Halberd"),
@@ -38,6 +47,7 @@ namespace Enigmes
             };
             DictEnigme.Add(0, firstEnigme);
             DictEnigme.Add(1, secondTest);
+            DictEnigme.Add(2, enigmeCouronne);
             DictEnigme.Add(3,lastEnigmeList);
             foreach (var item in DictEnigme[0])
             {
@@ -46,7 +56,15 @@ namespace Enigmes
             foreach (var enigmeObject in DictEnigme.Values.Where(objectList => objectList != DictEnigme[0])
                          .SelectMany(objectList => objectList))
             {
-                enigmeObject.GetComponent<XRGrabInteractable>().enabled = false;
+                if (enigmeObject.TryGetComponent<XRGrabInteractable>(out var interactable))
+                {
+                    interactable.enabled = false;
+                }
+                else
+                {
+                    enigmeObject.SetActive(false);
+                }
+                
             }
         }
     
@@ -56,13 +74,27 @@ namespace Enigmes
             if (EnigmeNum == lastEnigme) return;
             foreach (var lastObject in DictEnigme[lastEnigme])
             {
-                lastObject.GetComponent<XRGrabInteractable>().enabled = false;
+                if (lastObject.TryGetComponent<XRGrabInteractable>(out var interactable))
+                {
+                    interactable.enabled = false;
+                }
+                else
+                {
+                    //lastObject.SetActive(false);
+                }
             }
-            lastEnigme++;
+            lastEnigme = EnigmeNum;
             if (!DictEnigme.Keys.Contains(EnigmeNum)) return;
             foreach (var nextObject in DictEnigme[EnigmeNum])
             {
-                nextObject.GetComponent<XRGrabInteractable>().enabled = true;
+                if (nextObject.TryGetComponent<XRGrabInteractable>(out var interactable))
+                {
+                    interactable.enabled = true;
+                }
+                else
+                {
+                    nextObject.SetActive(true);
+                }
             }
             
         }

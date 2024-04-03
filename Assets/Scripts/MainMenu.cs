@@ -51,4 +51,9 @@ public class MainMenu : MonoBehaviour
         titleScreen.SetActive(true);
 
     }
+
+    public void ToTuto()
+    {
+        SceneManager.LoadScene("Tuto");
+    }
 }

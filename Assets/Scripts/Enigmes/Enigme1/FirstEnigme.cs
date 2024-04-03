@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -9,7 +10,7 @@ namespace Enigmes.Enigme1
     {
         [SerializeField] private Collider item;
         private static int _nbSucces;
-        private List<GameObject> allItems;
+        private GameObject[] allItems;
         private bool startedCoroutine;
         private (GameObject, bool) inPlace = (null, false);
         private Coroutine coroutine;
@@ -24,6 +25,7 @@ namespace Enigmes.Enigme1
         
             if (_nbSucces != 3) return;
             EnigmeManager.EnigmeNum = 1;
+            
             enabled = false;
         }
         /*
@@ -51,11 +53,11 @@ namespace Enigmes.Enigme1
         {
             startedCoroutine = true;
             var grab = obj.GetComponent<XRGrabInteractable>();
-            var rb = obj.GetComponent<Rigidbody>();
             while (grab.isSelected) yield return new WaitForEndOfFrame(); // Attendre une frame
         
 
             // Une fois que l'objet est lâché, placer l'objet et incrémenter _nbSucces si nécessaire
+            var rb = obj.GetComponent<Rigidbody>();
             obj.transform.position = transform.position;
             obj.transform.rotation = Quaternion.identity;
             rb.velocity = Vector3.zero;
