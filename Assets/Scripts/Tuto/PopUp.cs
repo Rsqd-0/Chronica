@@ -13,8 +13,7 @@ public class PopUp : MonoBehaviour
     {
         tutoManager = FindObjectOfType<TutoManager>();
     }
-
-
+    
     public void Close0()
     {
         GetComponentInChildren<Canvas>().gameObject.SetActive(false);

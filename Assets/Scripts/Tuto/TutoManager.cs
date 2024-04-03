@@ -22,8 +22,9 @@ public class TutoManager : MonoBehaviour
     [SerializeField] private InputActionProperty rightTeleportButton; // Teleportation
     [SerializeField] private InputActionProperty moveButton; // Move
     [SerializeField] private InputActionProperty rotateButton; // Rotate
-    [SerializeField] private XRDirectInteractor leftDirectRay; // Grab
-    [SerializeField] private XRDirectInteractor rightDirectRay; // Grab
+
+    private GameObject cube;
+    private Vector3 cubePos;
 
     private void Start()
     {
@@ -33,12 +34,14 @@ public class TutoManager : MonoBehaviour
         {
             popUps[i].SetActive(false);
         }
+
+        cube = popUpObj[5].GetComponentInChildren<XRGrabInteractable>().gameObject;
+        cubePos = cube.transform.position;
     }
 
 
     private void Update()
     {
-        Debug.Log(popUpsIndex_);
         switch (popUpsIndex_)
         {
             /*
@@ -55,7 +58,7 @@ public class TutoManager : MonoBehaviour
                 break;
             
             case 3: // Move
-                if (moveButton.action.WasPerformedThisFrame()) SwitchPopUp();
+                if (moveButton.action.WasPerformedThisFrame()) hasMove = true;
                 break;
             
             /*
@@ -64,7 +67,7 @@ public class TutoManager : MonoBehaviour
              */
             
             case 5: // Grab an object
-                if (leftDirectRay.interactablesSelected.Count != 0 || leftDirectRay.interactablesSelected.Count != 0) SwitchPopUp();
+                if (cubePos != cube.transform.position) SwitchPopUp();
                 break;
             
             case 6: // Open the menu
@@ -81,6 +84,8 @@ public class TutoManager : MonoBehaviour
 
     public void SwitchPopUp()
     {
+        if (popUpsIndex_ == 7) return;
+        
         popUpsIndex_++;
         popUps[popUpsIndex_ - 1].SetActive(false);
         popUps[popUpsIndex_].SetActive(true);
