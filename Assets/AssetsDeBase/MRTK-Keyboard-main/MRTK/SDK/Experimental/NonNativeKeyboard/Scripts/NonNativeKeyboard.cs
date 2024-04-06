@@ -813,7 +813,7 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
                     Debug.Log("Enigme 2 OK");
                 }
 
-                Close();
+                //Close();
             }
             else
             {
