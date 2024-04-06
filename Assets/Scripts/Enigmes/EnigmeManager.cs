@@ -12,7 +12,7 @@ namespace Enigmes
         
         public static readonly Dictionary<int, GameObject[]> DictEnigme = new();
     
-        public static int EnigmeNum;
+        public static int EnigmeNum = 0;
         
         private int lastEnigme = 3;
         
@@ -28,13 +28,13 @@ namespace Enigmes
              var secondTest = new[]
             
             {
-                GameObject.Find("Enigme2") // TODO : Set Active
+                GameObject.Find("Enigme2")
             };
             
             var enigmeCouronne = new[]
             {
-                GameObject.Find("Couronne"),
-                GameObject.Find("CeaserBust")
+                GameObject.Find("Couronne")
+                //GameObject.Find("CeaserBust")
             };
             
             var lastEnigmeList = new[]
@@ -49,23 +49,8 @@ namespace Enigmes
             DictEnigme.Add(1, secondTest);
             DictEnigme.Add(2, enigmeCouronne);
             DictEnigme.Add(3,lastEnigmeList);
-            foreach (var item in DictEnigme[0])
-            {
-                item.GetComponent<XRGrabInteractable>().enabled = true;
-            }
-            foreach (var enigmeObject in DictEnigme.Values.Where(objectList => objectList != DictEnigme[0])
-                         .SelectMany(objectList => objectList))
-            {
-                if (enigmeObject.TryGetComponent<XRGrabInteractable>(out var interactable))
-                {
-                    interactable.enabled = false;
-                }
-                else
-                {
-                    enigmeObject.SetActive(false);
-                }
-                
-            }
+            secondTest[0].SetActive(false);
+            enigmeCouronne[0].SetActive(false);
         }
     
         // Update is called once per frame
@@ -73,6 +58,13 @@ namespace Enigmes
         {
             if (EnigmeNum == lastEnigme) return;
 
+            if (EnigmeNum == 1)
+            {
+                Debug.Log("gy");
+                DictEnigme[EnigmeNum][0].SetActive(true);
+                Debug.Log("test");
+                return;
+            }
             if (EnigmeNum == 2)
             {
                 DictEnigme[EnigmeNum][0].SetActive(true);

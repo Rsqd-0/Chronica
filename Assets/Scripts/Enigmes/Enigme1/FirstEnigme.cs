@@ -22,9 +22,11 @@ namespace Enigmes.Enigme1
         // Update is called once per frame
         private void Update()
         {
-        
             if (_nbSucces != 3) return;
+            EnigmeManager em = FindObjectOfType<EnigmeManager>();
+            em.Success();
             EnigmeManager.EnigmeNum = 1;
+            Destroy(this);
             
             enabled = false;
         }
