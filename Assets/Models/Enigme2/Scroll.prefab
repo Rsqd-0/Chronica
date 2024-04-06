@@ -1761,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1923032099713671861, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
       propertyPath: m_text
-      value: "<b>\u201CVeni, vidi, vici\u201D/b> est une phrase latine signifiant
+      value: "<b>\u201CVeni, vidi, vici\u201D</b> est une phrase latine signifiant
         <b>\u201CJe suis venu, j\u2019ai vu, j\u2019ai vaincu\u201D\r</b>\n\r\nCes
         mots furent prononc\xE9s par Jules C\xE9sar lorsqu\u2019il annon\xE7a au
         S\xE9nat romain sa victoire face \xE0 Pharnace II, roi du Pont, en 47 avant

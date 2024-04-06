@@ -12,7 +12,7 @@ namespace Enigmes
         
         public static readonly Dictionary<int, GameObject[]> DictEnigme = new();
     
-        public static int EnigmeNum = 0;
+        public static int EnigmeNum = 1;
         
         private int lastEnigme = 3;
         

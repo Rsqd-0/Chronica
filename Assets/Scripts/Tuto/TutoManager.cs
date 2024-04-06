@@ -42,6 +42,7 @@ public class TutoManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(popUpsIndex_);
         switch (popUpsIndex_)
         {
             /*
@@ -67,7 +68,8 @@ public class TutoManager : MonoBehaviour
              */
             
             case 5: // Grab an object
-                if (cubePos != cube.transform.position) SwitchPopUp();
+                if (cubePos.y > cube.transform.position.y) SwitchPopUp();
+                Debug.Log("uygedjhjsj");
                 break;
             
             case 6: // Open the menu
@@ -84,8 +86,6 @@ public class TutoManager : MonoBehaviour
 
     public void SwitchPopUp()
     {
-        if (popUpsIndex_ == 7) return;
-        
         popUpsIndex_++;
         popUps[popUpsIndex_ - 1].SetActive(false);
         popUps[popUpsIndex_].SetActive(true);

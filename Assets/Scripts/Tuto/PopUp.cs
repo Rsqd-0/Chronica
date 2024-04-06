@@ -28,5 +28,6 @@ public class PopUp : MonoBehaviour
     public void Open4()
     {
         tutoManager.SwitchPopUp();
+        Destroy(this);
     }
 }
