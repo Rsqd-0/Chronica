@@ -14,7 +14,7 @@ namespace Enigmes
     
         public static int EnigmeNum;
         
-        private int lastEnigme;
+        private int lastEnigme = 3;
         
         private void Awake()
         {
@@ -72,6 +72,13 @@ namespace Enigmes
         private void Update()
         {
             if (EnigmeNum == lastEnigme) return;
+
+            if (EnigmeNum == 2)
+            {
+                DictEnigme[EnigmeNum][0].SetActive(true);
+                return;
+            }
+
             foreach (var lastObject in DictEnigme[lastEnigme])
             {
                 if (lastObject.TryGetComponent<XRGrabInteractable>(out var interactable))

@@ -4,6 +4,7 @@
 //using Microsoft.MixedReality.Toolkit.Input;
 //using Microsoft.MixedReality.Toolkit.Utilities;
 using System;
+using Enigmes;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -801,6 +802,14 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
                 if (NonNativeKeyboard.Instance.InputField.text.ToLower() == "veni, vidi, vici" ||
                     NonNativeKeyboard.Instance.InputField.text.ToLower() == "veni,vidi,vici")
                 {
+                    // On détruit l'ui pour répondre à l'énigme
+                    GameObject gm = gameObject.GetComponentInChildren<Canvas>().gameObject;
+                    Destroy(gm);
+                    // On remplace par la ui CR
+                    gameObject.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+                    EnigmeManager em = FindObjectOfType<EnigmeManager>();
+                    // On passe à l'énigme suivante
+                    em.Success();
                     Debug.Log("Enigme 2 OK");
                 }
 
