@@ -1643,6 +1643,195 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &6682459942784660722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8031599563708736181}
+    m_Modifications:
+    - target: {fileID: 210501717150355422, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 210501717150355422, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210501717150355422, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 634.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 417.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.005024759
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896999992730063815, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923032099713671861, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_text
+      value: "<b>\u201CVeni, vidi, vici\u201D/b> est une phrase latine signifiant
+        <b>\u201CJe suis venu, j\u2019ai vu, j\u2019ai vaincu\u201D\r</b>\n\r\nCes
+        mots furent prononc\xE9s par Jules C\xE9sar lorsqu\u2019il annon\xE7a au
+        S\xE9nat romain sa victoire face \xE0 Pharnace II, roi du Pont, en 47 avant
+        J.-C. . Cette victoire, qui s\u2019est d\xE9roul\xE9e pr\xE8s de Z\xE9la,
+        en Asie mineure, lui a permis de conqu\xE9rir le Royaume du Pont.\r\n\r\nCette
+        expression d\xE9signe \xE0 la fois le prestige de cette victoire et les prouesses
+        militaires accomplies par un C\xE9sar alors en pleine guerre civile. Cette
+        expression peut aussi \xEAtre interpr\xE9t\xE9e comme une preuve du m\xE9pris
+        que portait C\xE9sar au s\xE9nat patricien qui incarne g\xE9n\xE9ralement
+        le groupe le plus puissant de la R\xE9publique romaine.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923032099713671861, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923032099713671861, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1923032099713671861, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120296090799619304, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120296090799619304, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4120296090799619304, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201740799145269783, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -185
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288005929494659098, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904759485809098011, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_Name
+      value: Item Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904759485809098011, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8566277265146019291, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+--- !u!1 &247275504784902633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6904759485809098011, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+  m_PrefabInstance: {fileID: 6682459942784660722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6098122753964546843 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 584412129574809577, guid: 0916c80c6db5a534584654b67a005afd, type: 3}
+  m_PrefabInstance: {fileID: 6682459942784660722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7565836553427600734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1721,6 +1910,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7842058a1946faf48bb98bd9ad4cf5c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1497083553289656581}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7842058a1946faf48bb98bd9ad4cf5c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6098122753964546843}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7842058a1946faf48bb98bd9ad4cf5c9, type: 3}
       insertIndex: -1
@@ -1812,6 +2004,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11401954, guid: c4e389e44d96da64ea974ab237ce1a9a, type: 3}
+      propertyPath: ui1
+      value: 
+      objectReference: {fileID: 2833878810248264188}
+    - target: {fileID: 11401954, guid: c4e389e44d96da64ea974ab237ce1a9a, type: 3}
+      propertyPath: ui2
+      value: 
+      objectReference: {fileID: 247275504784902633}
     - target: {fileID: 11401954, guid: c4e389e44d96da64ea974ab237ce1a9a, type: 3}
       propertyPath: CloseOnInactivity
       value: 0

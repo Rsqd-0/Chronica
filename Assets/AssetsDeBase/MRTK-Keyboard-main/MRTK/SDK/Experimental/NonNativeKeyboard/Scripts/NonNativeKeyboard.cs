@@ -22,6 +22,8 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
     ///       get the textEntered event.
     public class NonNativeKeyboard : MonoBehaviour
     {
+        [SerializeField] private GameObject ui1;
+        [SerializeField] private GameObject ui2;
         public static NonNativeKeyboard Instance { get; private set; }
 
         /// <summary>
@@ -803,10 +805,8 @@ namespace Microsoft.MixedReality.Toolkit.Experimental.UI
                     NonNativeKeyboard.Instance.InputField.text.ToLower() == "veni,vidi,vici")
                 {
                     // On détruit l'ui pour répondre à l'énigme
-                    GameObject gm = gameObject.GetComponentInChildren<Canvas>().gameObject;
-                    Destroy(gm);
-                    // On remplace par la ui CR
-                    gameObject.GetComponentInChildren<Canvas>().gameObject.SetActive(true);
+                    ui1.SetActive(false);
+                    ui2.SetActive(true);
                     EnigmeManager em = FindObjectOfType<EnigmeManager>();
                     // On passe à l'énigme suivante
                     em.Success();
