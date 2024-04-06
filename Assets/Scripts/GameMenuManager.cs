@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameMenuManager : MonoBehaviour
 {
@@ -58,5 +59,10 @@ public class GameMenuManager : MonoBehaviour
     {
         rulesMenu.SetActive(false);
         menu.SetActive(true);
+    }
+
+    public void PrincipalButton()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
