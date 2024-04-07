@@ -23,7 +23,8 @@ public class TutoManager : MonoBehaviour
     [SerializeField] private InputActionProperty moveButton; // Move
     [SerializeField] private InputActionProperty rotateButton; // Rotate
 
-    private GameObject cube;
+    [SerializeField] private GameObject empty;
+    private XRGrabInteractable cube;
     private Vector3 cubePos;
 
     private void Start()
@@ -35,14 +36,13 @@ public class TutoManager : MonoBehaviour
             popUps[i].SetActive(false);
         }
 
-        cube = popUpObj[5].GetComponentInChildren<XRGrabInteractable>().gameObject;
+        cube = popUpObj[5].GetComponentInChildren<XRGrabInteractable>();
         cubePos = cube.transform.position;
     }
 
 
     private void Update()
     {
-        Debug.Log(popUpsIndex_);
         switch (popUpsIndex_)
         {
             /*
@@ -68,8 +68,7 @@ public class TutoManager : MonoBehaviour
              */
             
             case 5: // Grab an object
-                if (cubePos.y > cube.transform.position.y) SwitchPopUp();
-                Debug.Log("uygedjhjsj");
+                if (Math.Abs(cube.transform.position.x - empty.transform.position.x) > 0.1 )  SwitchPopUp();
                 break;
             
             case 6: // Open the menu

@@ -1069,7 +1069,7 @@ Transform:
   m_GameObject: {fileID: 250773930}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 5, y: 0.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1519,7 +1519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &330139001
 Transform:
   m_ObjectHideFlags: 0
@@ -3267,6 +3267,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680108356}
   m_CullTransparentMesh: 1
+--- !u!1 &723425762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723425763}
+  m_Layer: 0
+  m_Name: Empty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &723425763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723425762}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5, y: 0.25, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 792234655}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &733860057
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3706,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 250773931}
+  - {fileID: 723425763}
   m_Father: {fileID: 330139001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808417263
@@ -4006,6 +4038,7 @@ MonoBehaviour:
   - {fileID: 16844319}
   - {fileID: 2011198478}
   - {fileID: 1738057240}
+  - {fileID: 1762648360}
   popUpObj:
   - {fileID: 670262299}
   - {fileID: 1282702193}
@@ -4075,6 +4108,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  empty: {fileID: 723425762}
 --- !u!1 &849243762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4692,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5907563708459458202, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  head: {fileID: 610431391}
+  head: {fileID: 1674195868}
   spawnDistance: 1.5
 --- !u!4 &977358251
 Transform:
@@ -7230,6 +7264,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670216829}
   m_CullTransparentMesh: 1
+--- !u!4 &1674195868 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2531537937819282539, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+  m_PrefabInstance: {fileID: 2066003678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684047038
 GameObject:
   m_ObjectHideFlags: 0
@@ -7450,9 +7489,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1738057242}
         m_TargetAssemblyTypeName: PopUp, Assembly-CSharp
-        m_MethodName: Close
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9348,6 +9387,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Interaction (Player)
       objectReference: {fileID: 0}
+    - target: {fileID: 7097525591128719792, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: leftActivate.m_Reference
+      value: 
+      objectReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 7097525591128719792, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: rightActivate.m_Reference
+      value: 
+      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

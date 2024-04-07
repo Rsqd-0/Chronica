@@ -12,7 +12,7 @@ namespace Enigmes
         
         public static readonly Dictionary<int, GameObject[]> DictEnigme = new();
     
-        public static int EnigmeNum = 1;
+        public static int EnigmeNum = 0;
         
         private int lastEnigme = 3;
         
@@ -26,7 +26,6 @@ namespace Enigmes
             };
             
              var secondTest = new[]
-            
             {
                 GameObject.Find("Enigme2")
             };
@@ -34,7 +33,6 @@ namespace Enigmes
             var enigmeCouronne = new[]
             {
                 GameObject.Find("Couronne")
-                //GameObject.Find("CeaserBust")
             };
             
             var lastEnigmeList = new[]
@@ -45,6 +43,7 @@ namespace Enigmes
                 GameObject.Find("Mace"),
                 GameObject.Find("Bow"),
             };
+            
             DictEnigme.Add(0, firstEnigme);
             DictEnigme.Add(1, secondTest);
             DictEnigme.Add(2, enigmeCouronne);
@@ -60,9 +59,8 @@ namespace Enigmes
 
             if (EnigmeNum == 1)
             {
-                Debug.Log("gy");
+
                 DictEnigme[EnigmeNum][0].SetActive(true);
-                Debug.Log("test");
                 return;
             }
             if (EnigmeNum == 2)
