@@ -1519,7 +1519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330139001
 Transform:
   m_ObjectHideFlags: 0
@@ -8081,7 +8081,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Bravo, tu as presque atteint la derni\xE8re \xE9tape. Il te reste \xE0
-    ouvrir le menu. Comment faire ?\n\n<b>Clique sur B</b> !"
+    ouvrir le menu. Comment faire ?\n\n<b>Clique sur la touche B de ton controlleur
+    gauche</b> !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
