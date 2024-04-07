@@ -10,7 +10,7 @@ namespace Enigmes
     {
         [SerializeField] private AudioSource source;
         
-        public static readonly Dictionary<int, GameObject[]> DictEnigme = new();
+        public static Dictionary<int, GameObject[]> DictEnigme = new();
     
         public static int EnigmeNum = 0;
         
@@ -51,7 +51,7 @@ namespace Enigmes
             secondTest[0].SetActive(false);
             enigmeCouronne[0].SetActive(false);
         }
-    
+        
         // Update is called once per frame
         private void Update()
         {
@@ -100,6 +100,11 @@ namespace Enigmes
         {
             EnigmeNum++;
             source.Play();
+        }
+
+        public void Clear()
+        {
+            DictEnigme.Clear();
         }
     }
 }

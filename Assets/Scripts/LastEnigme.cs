@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Enigmes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LastEnigme : MonoBehaviour
@@ -21,9 +22,9 @@ public class LastEnigme : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Poinçon"))
         {
-            Debug.Log("done");
             enigme.Success();
             meshRenderer.material = red;
+            StartCoroutine(Wait());
         }
     }
 
@@ -33,5 +34,11 @@ public class LastEnigme : MonoBehaviour
         {
             fresque.SetActive(true);
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -8958,6 +8958,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1664173840154716928, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_SelectAction.m_Reference
+      value: 
+      objectReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 1664173840154716928, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_ActivateAction.m_Reference
+      value: 
+      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 2868175066147712501, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
       propertyPath: m_AllowAnchorControl
       value: 0
@@ -8990,6 +8998,30 @@ PrefabInstance:
       propertyPath: m_AllowAnchorControl
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6980227607171745870, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_SelectAction.m_Reference
+      value: 
+      objectReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6980227607171745870, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_ActivateAction.m_Reference
+      value: 
+      objectReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6980227607171745870, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_SelectActionValue.m_Reference
+      value: 
+      objectReference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6980227607171745870, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: m_ActivateActionValue.m_Reference
+      value: 
+      objectReference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 7097525591128719792, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: leftActivate.m_Reference
+      value: 
+      objectReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 7097525591128719792, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: rightActivate.m_Reference
+      value: 
+      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 8553893339664158884, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
       propertyPath: m_PlayHapticsOnHoverExited
       value: 0

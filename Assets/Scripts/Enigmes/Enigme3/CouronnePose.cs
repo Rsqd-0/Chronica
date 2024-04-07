@@ -20,7 +20,8 @@ namespace Enigmes.Enigme3
         private void Update()
         {
             if (!isPutOn) return;
-            EnigmeManager.EnigmeNum++;
+            EnigmeManager em = FindObjectOfType<EnigmeManager>();
+            em.Success();
             enabled = false;
         }
 

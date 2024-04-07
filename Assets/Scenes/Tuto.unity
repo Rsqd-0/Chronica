@@ -9383,6 +9383,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4071323961946905991, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: gripAnimationAction.m_Reference
+      value: 
+      objectReference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 4786193011155479010, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
+      propertyPath: gripAnimationAction.m_Reference
+      value: 
+      objectReference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6403311030662467140, guid: 9d1d53ecafccd2c41a58659b1e93ed3c, type: 3}
       propertyPath: m_Name
       value: XR Interaction (Player)

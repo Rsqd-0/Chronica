@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enigmes;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -63,6 +64,7 @@ public class GameMenuManager : MonoBehaviour
 
     public void PrincipalButton()
     {
+        EnigmeManager.DictEnigme.Clear();
         SceneManager.LoadScene("MainMenu");
     }
 }
